@@ -1,0 +1,211 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <title>用户中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+<link rel="stylesheet" type="text/css" href="http://cdn.bootstrapmb.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/bootstrap/css/user_main.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/user_style.css">
+
+    <link rel="stylesheet" href="/static/bootstrap/css/change_pass.css">
+    <!--link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet"-->
+    <!--link rel="stylesheet" href="/static/bootstrap/css/heightlength.css"-->
+    <link rel="stylesheet" href="/static/bootstrap/css/mxjs.css">
+</head>
+
+
+
+
+<body>
+<style type="text/css">
+    #user_css{
+           width:136px;
+           height:91px;
+           float:right;
+           text-align:center;
+           line-height:79px;
+           font-size:25px;
+    }
+</style>
+<!-- 模态框 -->
+<div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title" align="center">修改密码</h4>
+                    <br />
+
+
+
+
+                    <form method="post" action="/change_pass/" class="form-horizontal" >
+                        <div class="form-group">
+                            <label for="password" class="col-sm-offset-2 col-sm-2 control-label">旧密码</label>
+                            <div class="col-sm-5">
+                                <input type="password" class="form-control" id="old_pass" name="oldpass" placeholder="请输入您的旧密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-offset-2 col-sm-2 control-label">新密码</label>
+                            <div class="col-sm-5">
+                                <input type="password" class="form-control" id="new_pass" name="newpass" placeholder="请输入您的新密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-offset-2 col-sm-2 control-label">重复输入</label>
+                            <div class="col-sm-5">
+                                <input type="password" class="form-control" id="re_new_pass" name="renewpass" placeholder="请重复输入您的新密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-5">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button id="submitBtn" type="submit" class="btn  btn-primary">确认修改</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+<!-- 模态框-->
+
+
+
+    <div id="loading">
+        <div></div>
+        <div></div>
+        <span></span>
+    </div>
+    <!-- WRAPPER -->
+    <div id="wrapper">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div  style="width:217px;height:81px;float:left">
+                <div style="width=81px;float:left">
+                    <img src="/static/bootstrap/img/user.png" alt="Klorofil Logo" class="img-responsive logo">
+                </div>
+                <div  id="user_css">
+
+
+                        {{user_name}}
+
+                </div>
+            </div>
+
+
+            <div class="container-fluid"  style="width:1699px;height:81px;float:right">
+                <div class="navbar-btn" style="padding: 0; padding-top: 10px;">
+                    <button type="button" class="btn-toggle-fullwidth btn-toggle-mx"><img src="/static/bootstrap/img/left.png" height="40px" alt=""></button>
+                </div>
+                <div class="navbar-btn" style="float:right">
+                    <a href={% url 'to_login'%} >
+                    <button type="button" class="btn-toggle-fullwidth btn-toggle-mx"><img src="/static/bootstrap/img/quit.png" height="40px" alt=""></button>
+                    </a>
+                </div>
+
+            </div>
+
+        </nav>
+        <!-- END NAVBAR -->
+        <!--_________________________________________________________________________________________-->
+        <!-- LEFT SIDEBAR -->
+        <div id="sidebar-nav" class="sidebar">
+            <div class="sidebar-scroll">
+                <nav>
+                    <ul class="nav">
+                        <li><a href="" target="_blank" class="iframe_link active"><span>数据</span></a></li>
+                        <li><a href="#" class="tbox"><span>修改密码</span></a></li>
+                        <li><a href={% url 'homepage' %} ><span>返回系统主页</span></a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-content" style="height: 100%;">
+
+
+                <div class="container">
+                    <div class="jsbg">
+                         <div class="col-lg-12 mxlength">
+                             <div class="mx-1">
+			                        <h2>客官，这是您第  {{total_login}}  次使用本系统了</h2>
+	                         </div>
+                         </div>
+                         <div class="col-lg-12  ">
+                                    <p>本站目前共有  {{total_users_num}} 位用户</p>
+                                    <p>您是第 {{user_id}} 位注册本站的用户哦</p>
+                             {% if message %}
+                               <div class="alert alert-warning">{{ message }}</div>
+                             {% endif %}
+                         </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="/static/bootstrap/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap421.js"></script>
+    <script src="/static/bootstrap/js/jquery.slimscroll.min.js"></script>
+    <script src="/static/bootstrap/js/klorofil-common.js"></script>
+
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script src="/static/bootstrap/js/smoothscroll.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/static/bootstrap/js/mking.js"></script>
+
+<script type="text/javascript" src="http://cdn.bootstrapmb.com/jquery/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootstrapmb.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+        $(function () {
+
+            $(".tbox").click(function () {
+                $('#myModal').modal('show')
+            })
+
+        });
+</script>
+
+<script>
+    	$(function(){
+
+    		var flagName=false;
+    		var flagPas=false;
+    		var flagPass=false;
+    		/*验证用户名*/
+    		var name,passWord,passWords;
+
+
+    		$("#submitBtn").click(function(){
+
+    				localStorage.setItem("name",name);
+    				localStorage.setItem("passWord",passWord);
+    				/*  location={% url 'to_login' %}   */
+    				var oldpass=$("#old_pass").val();
+    				var newpass=$("#new_pass").val();
+    			    var renewpass=$("#re_new_pass").val();
+
+
+    		})
+    	})
+    </script>
+</body>
+</html>

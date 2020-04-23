@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/jquery.step.css" />
+<script src="/static/bootstrap/js/jquery.min.js"></script>
+<script src="/static/bootstrap/js/jquery.step.min.js"></script>
+
+    <link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css>
+
+    <link rel="stylesheet" href="/static/bootstrap/css/index_01_01.css">
+
+
+
+
+<style>
+button {
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	background-color: #5bc0de;
+}
+
+.main{
+	width: 1000px;
+	height:200px;
+	margin: -630px 400px 800px 50px;     /*最后一个参数调整左右*/
+}
+
+#step {
+	margin-bottom: 30px;
+
+}
+
+.btns {
+	float: left;
+}
+
+.info {
+	float: left;
+	height: 34px;
+	line-height: 34px;
+	margin-left: 40px;
+	font-size: 28px;
+	font-weight: bold;
+	color: #928787;
+}
+
+.info span {
+	color: red;
+}
+</style>
+</head>
+
+<body>
+
+<div class="main" style="position:fixed;z-index:1">
+
+	<div id="step">
+	</div>
+
+	<!--div class="btns">
+		<button id="prevBtn">上一步</button>
+		<button id="nextBtn">下一步</button>
+		<button id="btn1">跳到第二步</button>
+		<button id="btn2">跳到第三步</button>
+	</div-->
+	<!--div class="info">index：<span id="index"></span></div-->
+</div>
+<div style="position:relative;left:230px;top:100px;width:1000px;z-index:0">
+    <img src="/static/bootstrap/img/index_01_01.png">
+    <br/>
+    <br/>
+    <!---------------------------------------->
+    <div class="form-group">
+        <span>户型：</span>
+        <input class="form-field" type="text" placeholder="120" id="ip_01" onkeyup="value=value.replace(/[^\d]/g,'')"/>
+        <span>平</span>
+    </div>
+    <!---------------------------------------->
+    <strong><label>层高:</label></strong>
+    <div class=form-group>
+        <br/>
+        <select class=form-control id="ch_01" onchange="ch_01_ch()">
+            <option value="999" selected disabled style="display: none;">--请选择层高--</option>
+            <option  value="1">2.20m以上</option>
+            <option  value="0.5">2.20m以下</option>
+        </select>
+    </div>
+    <!---------------------------------------->
+    <img src="/static/bootstrap/img/index_01_02.png">
+    <br/>
+    <br/>
+    <!---------------------------------------->
+    <strong><label>楼型:</label></strong>
+    <div class=form-group>
+        <br/>
+        <select class=form-control id="ch_02" onchange="ch_02_ch()">
+            <option value="999" selected disabled style="display: none;">--请选择楼型--</option>
+            <option  value="0.125">普通多层</option>
+            <option  value="0.175">带电梯小高层</option>
+            <option  value="0.225">高层住宅</option>
+        </select>
+    </div>
+    <!---------------------------------------->
+    <div class="form-group">
+        <span>阳台：</span>
+        <input class="form-field" type="text" placeholder="6" id="ip_02" onkeyup="value=value.replace(/[^\d]/g,'')"/>
+        <span>平</span>
+    </div>
+    <!---------------------------------------->
+    <strong><label>阳台类型:</label></strong>
+    <div class=form-group>
+        <br/>
+        <select class=form-control id="ch_03" onchange="ch_03_ch()">
+            <option value="999" selected disabled style="display: none;">--请选择阳台类型--</option>
+            <option  value="1">全封闭</option>
+            <option  value="0.5">有上盖半封闭</option>
+            <option  value="0">无上盖</option>
+        </select>
+    </div>
+    <!---------------------------------------->
+    <strong><label>车位:</label></strong>
+    <div class=form-group>
+        <br/>
+        <select class=form-control id="ch_04" onchange="ch_04_ch()">
+            <option value="999" selected disabled style="display: none;">--请选择车位类型（6平米）--</option>
+            <option  value="1">公摊</option>
+            <option  value="0.5">私有</option>
+            <option  value="0">无</option>
+        </select>
+    </div>
+    <!---------------------------------------->
+    <button class="gitment-editor-submit" type="submit" onclick="dia_log()">提交</button>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+
+
+<script type="text/javascript">
+	var step1 = $("#step");
+	var index1 = $("#index");
+
+	step1.step({
+		index1: 0,
+		time: 500,
+		title: ["开始", "第一步", "第二步", "第三步", "完成"]
+	});
+
+	index1.text(step1.getIndex());
+
+	$("#prevBtn").on("click", function() {
+		step1.prevStep();
+		index1.text(step1.getIndex());
+	});
+
+	$("#nextBtn").on("click", function() {
+		step1.nextStep();
+		index1.text(step1.getIndex());
+	});
+
+
+</script>
+<script>
+    var a_01,a_02,a_03,a_04;
+    var j_01=1,j_02=1,j_03=1,j_04=1,fin=0;
+    var click_t = 1;    //防止多次点击，不停计算面积，越来越大
+    var a=0,b=0;
+    var in_put = document.getElementsByClassName('form-field');
+    function ch_01_ch(){
+        var objS = document.getElementById("ch_01");
+        a_01 = objS.options[objS.selectedIndex].value;
+        //alert(a);
+        if(j_01 == 1){
+            step1.nextStep();
+            j_01 ++;
+            fin++;
+        }
+    }
+    function ch_02_ch(){
+        var objS = document.getElementById("ch_02");
+        a_02 = objS.options[objS.selectedIndex].value;
+        //alert(in_put[0].value);
+        //alert(a_01);
+        if(j_02 == 1){
+            step1.nextStep();
+            j_02 ++;
+            fin++;
+        }
+    }
+    function ch_03_ch(){
+        var objS = document.getElementById("ch_03");
+        a_03 = objS.options[objS.selectedIndex].value;
+        //alert(in_put[0].value);
+        //alert(a_01);
+        if(j_03 == 1){
+            step1.nextStep();
+            j_03 ++;
+            fin++;
+        }
+    }
+    function ch_04_ch(){
+        var objS = document.getElementById("ch_04");
+        a_04 = objS.options[objS.selectedIndex].value;
+        //alert(in_put[0].value);
+        //alert(a_01);
+        if(j_04 == 1){
+            step1.nextStep();
+            j_04 ++;
+            fin++;
+        }
+    }
+    function dia_log(){
+          if(fin==4){
+               if(click_t==1){
+                   //alert("室内居住面积："+in_put[0].value+"\n"+"阳台面积："+in_put[1].value+"\n"+"停车位："+ +"\n"+"公共分摊面积："+ );
+                    a = in_put[0].value;
+                    b = in_put[1].value;
+
+                   if(a_01 == 0.5){
+                      a=a/2;
+                   }
+                    a_02 = a_02*a;     //公共使用面积
+                    b = b*a_03;       //阳台
+                    a=a-b-a_02;
+
+                    if(a_04==1){
+                         alert("计算完成！！！"+"\n"+"室内居住面积："+a+"\n"+"阳台面积："+b+"\n"+"公共分摊面积："+a_02+"\n"+"车位：6"+",（公摊）"+"\n"+"如果觉得数据有异，刷新此页，重新填入各项数据。");
+                    }
+                    if(a_04==0.5){
+                       alert("计算完成！！！"+"\n"+"室内居住面积："+a+"\n"+"阳台面积："+b+"\n"+"公共分摊面积："+a_02+"\n"+"车位：6"+",（私有）"+"\n"+"如果觉得数据有异，刷新此页，重新填入各项数据。");
+                    }
+                    if(a_04==0){
+                       alert("计算完成！！！"+"\n"+"室内居住面积："+a+"\n"+"阳台面积："+b+"\n"+"公共分摊面积："+a_02+"\n"+"车位：0"+"\n"+"如果觉得数据有异，刷新此页，重新填入各项数据。");
+                    }
+                    click_t++;
+               }
+          }
+
+    }
+</script>
+ 
+</body>
+</html>

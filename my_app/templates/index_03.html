@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <title></title>
+ 
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/index_03btsp.css">
+ 
+    <!--main css-->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/index_03.css">
+   
+</head>
+
+<body>
+
+
+    <section id="contact-area"  >
+        <div class="container">
+           
+            <!--end section heading-->
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <!--start contact form-->
+                    <div class="contact-box text-center">
+
+
+
+                        <form id="ajax-contact" action="/problem/" method="post">
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="{{user_name}}" disabled="disabled" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email*" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="标题">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="message" name="message" rows="10" placeholder="具体问题描述*" required></textarea>
+                            </div>
+                            <div class="form-group">
+                            <button id="rgbtn" type="submit">提 交</button>
+                            </div>
+                            <small></small><a href={% url 'index_03_01' %} class="signup">不发表问题，直接进入社区---></a>
+                            <div id="form-messages"></div>
+                        </form>
+
+
+
+
+                    </div>
+                    <!--end contact form-->
+                </div>
+            </div>
+        </div>
+    </section>
+  <script>
+    	$(function(){
+    		$("#regbtn").click(function(){
+
+
+    				var email=$("#email").val();
+    				var subject=$("#subject").val();
+    			    var message=$("#message").val();
+
+
+    		})
+    	})
+    </script>
+</body>
+
+</html>

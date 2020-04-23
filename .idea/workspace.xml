@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="27fe0a2e-0715-4c1e-a14c-d1ff4a63a1cd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mysite" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Xpmj6eNImlAL4rPII9gHFtvFgG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rfw" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="Python.mysite">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mysite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mysite" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="mysite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Administrator\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python.mysite" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27fe0a2e-0715-4c1e-a14c-d1ff4a63a1cd" name="Default Changelist" comment="" />
+      <created>1581751541910</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581751541910</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="727" y="326" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581752573484">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="727" y="326" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581752573484" />
+    <state x="690" y="443" key="DBNavigator.CreateRenameConsoleDialog" timestamp="1584190743382">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="443" key="DBNavigator.CreateRenameConsoleDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584190743382" />
+    <state x="540" y="235" key="DBNavigator.DatasetFilterDialog" timestamp="1584337203456">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="235" key="DBNavigator.DatasetFilterDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584337203456" />
+    <state x="680" y="420" width="560" height="275" key="DBNavigator.IdleConnectionDialog" timestamp="1584339328848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="680" y="420" width="560" height="275" key="DBNavigator.IdleConnectionDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584339328848" />
+    <state x="490" y="175" key="DBNavigator.ProjectSettingsDialog" timestamp="1584190063614">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="175" key="DBNavigator.ProjectSettingsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584190063614" />
+    <state x="733" y="346" key="DBNavigator.ResultSetRecordViewerDialog" timestamp="1585205451415">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="733" y="346" key="DBNavigator.ResultSetRecordViewerDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585205451415" />
+    <state x="1053" y="426" key="FileChooserDialogImpl" timestamp="1584190012622">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1053" y="426" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584190012622" />
+    <state width="1362" height="266" key="GridCell.Tab.0.bottom" timestamp="1581752611247">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1362" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581752611247" />
+    <state width="1362" height="266" key="GridCell.Tab.0.center" timestamp="1581752611246">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1362" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581752611246" />
+    <state width="1362" height="266" key="GridCell.Tab.0.left" timestamp="1581752611246">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1362" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581752611246" />
+    <state width="1362" height="266" key="GridCell.Tab.0.right" timestamp="1581752611246">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1362" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581752611246" />
+    <state width="632" height="184" key="LargeValuePreview.content" timestamp="1585205441234">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="632" height="184" key="LargeValuePreview.content/0.0.1920.1040@0.0.1920.1040" timestamp="1585205441234" />
+    <state x="715" y="134" key="SettingsEditor" timestamp="1584174063365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="134" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584174063365" />
+    <state x="1000" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1582777135129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1000" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582777135129" />
+    <state x="627" y="180" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585197125045">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="627" y="180" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585197125045" />
+    <state x="1222" y="239" width="647" height="801" key="find.popup" timestamp="1587453161411">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1222" y="239" width="647" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587453161411" />
+    <state x="814" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1587028454696">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="814" y="251" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587028454696" />
+  </component>
+</project>

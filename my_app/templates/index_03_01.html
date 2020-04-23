@@ -1,0 +1,292 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/static/bootstrap/css/pinglun.css">
+    <script src="/static/bootstrap/js/jquery-3.5.0.js"></script>
+    <script src="/static/bootstrap/js/jquery.cookie.js"></script>
+    <title></title>
+    <style>
+        .test{
+            height: auto;
+            margin:0% -24% 0 0%;
+        }
+    </style>
+
+    <style type="text/css">
+        body {
+            font-family: microsoft yahei,Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            background: #E5E6D0 url(/static/bootstrap/img/index_03_01.jpg) repeat 0 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+            a img {
+                border: 0;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .user-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #DE4C1C;
+        }
+
+        .wrapper {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 18px;
+            line-height: 30px;
+            text-align: center;
+            margin: 100px 0;
+        }
+
+            h1 span {
+                font-size: 12px;
+                color: #696A52;
+            }
+
+
+        /* comment style */
+        .ds-post-main {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .ds-avatar {
+            z-index: 2;
+            position: absolute;
+            top: 48px;
+            left: -20px;
+            padding: 5px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            box-shadow: -1px 0 1px rgba(0,0,0,.15) inset;
+            background: #E5E6D0 url(/static/bootstrap/img/index_03_01.jpg) repeat 0 0;
+        }
+
+            .ds-avatar a {
+                display: block;
+                padding: 1px;
+                width: 32px;
+                height: 32px;
+                border: 1px solid #B9BAA6;
+                border-radius: 50%;
+                background-color: #fff;
+                -moz-transition: color 0.15s linear;
+                -webkit-transition: color 0.15s linear;
+                transition: color 0.15s linear;
+            }
+
+            .ds-avatar img {
+                display: block;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22);
+            }
+
+            .ds-comment-body, .ds-avatar, .ds-avatar a,
+            .ds-avatar img {
+                -webkit-transition: .4s all ease-in-out;
+                -moz-transition: .4s all ease-in-out;
+                -o-transition: .4s all ease-in-out;
+                -ms-transition: .4s all ease-in-out;
+            }
+
+        .ds-post-main:hover .ds-avatar img {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+
+        .ds-comment-body {
+            z-index: 1;
+            position: relative;
+            left: 0;
+            background: #F0F0E3;
+            padding: 15px 15px 15px 47px;
+            color: #696A52;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.15), 0 1px 0 rgba(255,255,255,.75) inset;
+        }
+
+
+        /* layout */
+        .ds-post-main:hover .ds-comment-body {
+            left: 40px;
+        }
+
+        .ds-post-main:hover .ds-avatar:after, .ds-post-main:hover .ds-avatar a:after, .ds-post-main:hover .ds-avatar a:before {
+            position: absolute;
+            content: '+';
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #696A52;
+        }
+
+        .ds-post-main:hover .ds-avatar:after {
+            top: 14px;
+            left: 56px;
+        }
+
+        .ds-post-main:hover .ds-avatar a:after {
+            top: 9px;
+            left: 48px;
+        }
+
+        .ds-post-main:hover .ds-avatar a:before {
+            top: 9px;
+            left: -29px;
+        }
+
+        .ds-post-main:hover .ds-avatar {
+            left: -40px;
+        }
+
+            .ds-post-main:hover .ds-avatar a {
+                position: relative;
+                left: -80px;
+            }
+
+                .ds-post-main:hover .ds-avatar a img {
+                    position: relative;
+                    left: -80px;
+                }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+
+
+            {% for problem in problems %}
+            <div class="ds-comment-body">
+                <h3 id="pro_id">{{problem.pro_id}}</h3>
+                <a title="设计达人"  target="_blank" class="user-name" >用户ID:</a>
+                <a title="设计达人"  target="_blank" class="user-name" >{{ problem.user_id }}</a>   <br>
+                <a title="设计达人"  target="_blank" class="user-name">用户名:</a>
+                <a title="设计达人"  target="_blank" class="user-name" >{{ problem.user_name }}</a>   <br>
+                <a href="mailto:{{ problem.mail }}">邮箱地址:{{ problem.mail }}</a>
+
+                <p>{{ problem.theme }}</p>
+                <p>{{ problem.content }}</p>
+                <p>.............................................................................以下是评论区................................................................................</p>
+
+
+                        <div class="test">
+                            {% for an in ans %}
+                            {% ifequal  an.to_pro_id    problem.pro_id  %}
+                            <div lang="en-US" class="gitment-container gitment-comments-container">
+                                <ul class="gitment-comments-list">
+                                    <li class="gitment-comment">
+
+                                        <div class="gitment-comment-main">
+                                            <div class="gitment-comment-header">
+                                                <a class="user-name">
+                                                    {{an.user_name}}
+                                                </a>
+                                            </div>
+                                            <div class="gitment-comment-body gitment-markdown">
+                                                <p>{{an.ans_content}}</p>
+                                        </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            {% endifequal %}
+                           {% endfor %}
+
+
+                            <div lang="en-US" class="gitment-container gitment-editor-container">
+                                <div class="gitment-editor-main">
+
+                                    <div class="gitment-editor-body">
+                                        <div class="gitment-editor-write-field">
+                                            <textarea placeholder="说点什么吧*" title="Login to Comment"  class="for_js"></textarea>
+                                        </div>
+                                        <div class="gitment-editor-preview-field gitment-hidden">
+                                            <div class="gitment-editor-preview gitment-markdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gitment-editor-footer">
+                                    <button class="gitment-editor-submit" type="submit" id="btn" onclick="f1(this)">发表</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+            </div>
+            <br>
+            {% endfor %}
+
+
+
+
+
+    </div>
+
+
+
+<script>
+    function  f1(tag) {
+        var index=-1;
+        var a = document.getElementsByClassName('gitment-editor-submit');
+        var b = document.getElementsByClassName('for_js');
+        for (var i = 0, len =a.length; i < len; i++) {
+              var j = i + 1;
+            if (tag == a[i]) {
+                index = i;
+                //alert(b[index].value)
+                var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+                httpRequest.open('POST', '/ans_ajax/', true); //第二步：打开连接
+                httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+                httpRequest.send('text='+b[index].value+"&pro_id="+j);//发送请求 将情头体写在send中
+
+
+                httpRequest.onreadystatechange = function () {//请求后的回调接口，可将请求成功后要执行的程序写在其中
+                    if (httpRequest.readyState == 4 && httpRequest.status == 200) {//验证请求是否发送成功
+
+
+                        var json = httpRequest.responseText;//获取到服务端返回的数据
+                        //console.log(json);
+                        //alert(json)
+                        location.reload();
+                        b[index].value = '';
+
+
+                    }
+                    else if(httpRequest.readyState ==0 && httpRequest.status==404){
+                            alert("错误");
+                    }
+                };
+
+
+
+            }
+        }
+
+
+    }
+</script>
+</body>
+</html>
